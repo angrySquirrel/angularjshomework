@@ -7,12 +7,17 @@ angular.module('LunchCheck',[])
 	$scope.displayNumber = function(){
 		$scope.num = calculateNumber($scope.inputDishes);
 		$scope.displayText = "you have chosen "+ $scope.num + " different kinds of foods";
+		$scope.outputText = "";
 	};
 	$scope.checkToMuch = function(){
-		 if($scope.num>=5)
-		 	$scope.outputText = "eat enough!";
-		 else
-		 	$scope.outputText = "not enough! go above 5";
+		 if($scope.num == 0 ){
+		 	$scope.outputText = "Please enter data first";		
+		} else{
+			if($scope.num<=3)
+		 		$scope.outputText = "Enjoy!";
+		 	else
+		 		$scope.outputText = "Too much!";
+		} 
 	};
 
 	//return the number of the dishes separated by comma
