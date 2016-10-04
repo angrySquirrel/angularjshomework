@@ -16,7 +16,7 @@ function FoundItemsDirective() {
             onRemove: '&',
         },
         controller: FoundItemsController,
-        controllerAs: 'ctrlr',
+        controllerAs: 'ctrler',
         bindToController: true,
     };
 
@@ -24,7 +24,7 @@ function FoundItemsDirective() {
 }
 
 function FoundItemsController() {
-    var ctrlr = this;
+    var ctrler = this;
 }
 
 NarrowItDownController.$inject = ['MenuSearchService'];
