@@ -4,8 +4,8 @@
     angular.module('MenuApp')
 	.controller('ItemDetailController', ItemDetailController);
 
-    ItemDetailController.$inject = ['MenuDataService', 'items'];
-    function ItemDetailController(MenuDataService, items) {
+    ItemDetailController.$inject = ['items'];
+    function ItemDetailController(items) {
 		this.items = items;
     }
 })();
