@@ -18,24 +18,38 @@ this method should return a promise which is a result of using the $http service
     function MenuDataService($http) {
 		var service = this;
 
+		// service.getAllCategories = function() {
+		//     return $http({
+		// 		method: "GET",
+		//         url: "https://davids-restaurant.herokuapp.com/categories.json"
+		//     }).then(function(result) {
+		// 		return result.data;
+		//     });
+		// };
 		service.getAllCategories = function() {
 		    return $http({
 				method: "GET",
 		        url: "https://davids-restaurant.herokuapp.com/categories.json"
-		    }).then(function(result) {
-				return result.data;
 		    });
 		};
 
+		// service.getItemsForCategory = function(categoryShortName) {
+		//     return $http({
+		// 		method: "GET",
+		//         url: "https://davids-restaurant.herokuapp.com/menu_items.json",
+		// 		params: { category: categoryShortName }
+		//     }).then(function (result) {
+		// 		return result.data["menu_items"];
+		//     });
+		// };
 		service.getItemsForCategory = function(categoryShortName) {
 		    return $http({
 				method: "GET",
 		        url: "https://davids-restaurant.herokuapp.com/menu_items.json",
 				params: { category: categoryShortName }
-		    }).then(function (result) {
-				return result.data["menu_items"];
 		    });
 		};
+
 
     }
 })();

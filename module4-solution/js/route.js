@@ -20,7 +20,10 @@
 			controller: 'CategoriesController as categories',
 			resolve: {
 			    items: ['MenuDataService', function(MenuDataService) {
-				return MenuDataService.getAllCategories();
+					return MenuDataService.getAllCategories()
+											.then(function(result) {
+												return result.data;
+										    });
 			    }]
 			}
 	    })
@@ -30,7 +33,10 @@
 			controller: 'ItemDetailController as items',
 			resolve: {
 			    items: ['$stateParams', 'MenuDataService', function($stateParams, MenuDataService) {
-					return MenuDataService.getItemsForCategory($stateParams.itemId);
+					return MenuDataService.getItemsForCategory($stateParams.itemId)
+											.then(function (result) {
+													return result.data["menu_items"];
+											    });
 			    }]
 			}
 	    });
