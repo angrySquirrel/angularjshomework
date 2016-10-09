@@ -3,7 +3,7 @@
     'use strict';
     angular.module('MenuApp')
 	.component('items', {
-	    templateUrl: '../templates/allItems.template.html',
+	    templateUrl: 'templates/allItems.template.html',
 	    bindings: {
 			items: '<'
 	    }
