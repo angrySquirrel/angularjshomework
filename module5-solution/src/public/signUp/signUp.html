@@ -1,0 +1,54 @@
+<div class ="containter">
+<h1> Please Sign Up</h1>
+</div>
+
+<form name="signUpForm" novalidate>
+    <div class="container">
+        <div class="form-group">
+            <div>First Name</div>
+            <input type="text" name="firstName" class="form-control"
+                   ng-model="signUpCtrl.user.firstName" required>
+            <span ng-if="signUpForm.firstName.$error.required && signUpForm.firstName.$touched" class="help-block">
+                First name is required </span>
+        </div>
+        <div class="form-group">
+            <div>Last Name</div>
+            <input type="text" name="lastName" class="form-control"
+                   ng-model="signUpCtrl.user.lastName" required>
+            <span ng-if="signUpForm.lastName.$error.required && signUpForm.lastName.$touched" class="help-block">
+                Last name is required </span>
+        </div>
+        <div class="form-group">
+            <div>Email Address</div>
+            <input type="email" name="email" class="form-control"
+                   ng-model="signUpCtrl.user.email" required>
+            <span ng-if="(signUpForm.email.$error.required || signUpForm.email.$invalid) && signUpForm.email.$touched" class="help-block">
+                Email is required and must be a valid email address
+            </span>
+        </div>
+        <div class="form-group">
+            <div>Phone Number</div>
+            <input type="text" name="phone" class="form-control" placeholder="###########"
+                   ng-model="signUpCtrl.user.phone"
+                   pattern="(\d{11})">
+            <span ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched" class="help-block">
+                Phone number must be 11 digits
+            </span>
+        </div>
+        <div class="form-group">
+            <div>Favourite Dish</div>
+            <input type="text" name="favouriteDish" class="form-control" ng-model="signUpCtrl.user.favouriteDish" placeholder="A1">
+        </div>
+
+        <button class="btn btn-default"
+                ng-click="signUpCtrl.submit()"
+                ng-disabled="signUpForm.$invalid">
+            Submit
+        </button>
+
+        <div ng-if="signUpCtrl.message">
+            {{ signUpCtrl.message }}
+        </div>
+
+    </div>
+</form>
